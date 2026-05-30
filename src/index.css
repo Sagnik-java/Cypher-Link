@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+}
+
+/* Base resets & improvements */
+body {
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  background-color: #050508;
+  color: #f3f4f6;
+  background-image: radial-gradient(circle at center, #11111a 0%, #050508 100%);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.4);
+}
+
+html.light-mode {
+  filter: invert(1) hue-rotate(180deg);
+  background-color: white; /* Force background of HTML */
+}
+
+/* Re-invert videos, images and specific elements so they display normally */
+html.light-mode video,
+html.light-mode img,
+html.light-mode .no-invert {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* Prevent double-inversion for nested no-invert elements */
+html.light-mode .no-invert .no-invert,
+html.light-mode .no-invert img,
+html.light-mode .no-invert video {
+  filter: none;
+}
+
+html.light-mode .emoji-icon {
+  filter: invert(1) hue-rotate(180deg) !important;
+}
+

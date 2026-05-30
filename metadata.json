@@ -1,0 +1,6 @@
+{
+  "name": "Secure Local P2P Chat & Calls",
+  "description": "An end-to-end encrypted WebRTC group messaging, voice, and video calling app designed to run safely over local networks with zero external data sharing.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
